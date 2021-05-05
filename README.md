@@ -1,24 +1,12 @@
-# README
+### このレポジトリについて
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+RailsをAPIモードで作成し、`devise`と`devise token auth`でログイン機能まで実装済みのレポジトリです。
 
-Things you may want to cover:
+参考はこちら
+- (Rails6.0とdevice_token_auth でトークンベースで認証を実装する~confirmable + action mailerの設定まで)[https://qiita.com/mtoyopet/items/076b623ac72f4f83c5f6]
 
-* Ruby version
+### コマンドについて
 
-* System dependencies
+Railsコマンド実行時は`bundle exec`をつけてください。
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+`bundle exec rails s`
