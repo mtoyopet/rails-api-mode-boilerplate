@@ -92,11 +92,19 @@
 
 **ルートの設定**
 
-10. `routes.rb`を開き、`mount_devise_token_auth_for 'User', at: 'auth'`を下記に変更する
+10. `routes.rb`を開き、下記をごっそりコピペする
+  - `DeviseTokenAuth::RegistrationsController`クラスを継承
+  - `sign_up_params`の設定
+
     ```
-    mount_devise_token_auth_for 'User', at: 'auth', controllers: {
-      registrations: 'auth/registrations'
-    }
+    class Auth::RegistrationsController < DeviseTokenAuth::RegistrationsController
+
+      private
+
+      def sign_up_params
+        params.permit(:name, :email, :password, :password_confirmation)
+      end
+    end
     ```
 
 **コントローラの設定**
@@ -111,3 +119,6 @@
 12. `controllers/auth/registrations_controller.rb`にsign_up_paramsを追加
 
 **POSTMANでテスト**
+
+13. `bundle exec rails s`でサーバを起動
+14. Create / SignIn / Change Password
