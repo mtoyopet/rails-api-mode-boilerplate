@@ -15,6 +15,7 @@
 参考: [Rails6.0とdevice_token_auth でトークンベースで認証を実装する](https://qiita.com/mtoyopet/items/076b623ac72f4f83c5f6)
 
 **Deviseとdevise token authの導入**
+
 1. deviseとdevise_token_authをGemfileに追加。rubygems.orgから最新を追加すること
 2. `bundle install`、`bundle exec rails g devise:install`を実行
     ```
@@ -85,10 +86,12 @@
 7. `application_controller.rb`に`include DeviseTokenAuth::Concerns::SetUserByToken`があるか確認する
 
 **CORSの設定**
+
 8. `rack-cors`をGemfileに追加し、`bundle install`
 9. `config/application.rb`に[この設定](https://qiita.com/mtoyopet/items/076b623ac72f4f83c5f6#3applicationrb%E3%81%AE%E8%A8%AD%E5%AE%9A)を追加する
 
 **ルートの設定**
+
 10. `routes.rb`を開き、`mount_devise_token_auth_for 'User', at: 'auth'`を下記に変更する
     ```
     mount_devise_token_auth_for 'User', at: 'auth', controllers: {
@@ -97,6 +100,7 @@
     ```
 
 **コントローラの設定**
+
 11. `bundle exec rails g controller auth/registrations`を実行する
     ```
     Running via Spring preloader in process 46310
