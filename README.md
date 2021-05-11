@@ -10,5 +10,6 @@ Railsコマンド実行時は`bundle exec`をつけてください。
 
 例： `bundle exec rails s`
 
-### バージョン
+## バージョン&環境
 - Rails 6
+- DB: sqlite3
